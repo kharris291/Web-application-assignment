@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="styles/loginAssignment.css">
+<form ng-controller="create" class="form-signin form-horizontal" ng-submit="submitAccountCreation()" name="userForm" novalidate>
+	<div class="modal modal-inline">
+        <div>
+            <div class="modal-header">
+				<h3>Create User</h3>
+		    </div>
+            <div class="modal-body">
+            	<p>
+            		Enter a user name and password below
+            	</p>
+            	<div class="control-group">
+					<label class="control-label" for="username-field">Username :</label>
+					<div class="controls">
+						<input type="username" id="username-field" tabindex="1" autofocus name="username" ng-model="user.username" placeholder="e.g. blumBlum95"/>						
+					</div>
+				</div>
+				<div class="control-group" ng-class="{error: helpers.isInvalid(userForm.newPassword)}">
+					<label class="control-label" for="password-field">Password :</label>
+					<div class="controls">
+						<input type="password" id="password-field" name="newPassword" ng-model="user.newPassword"
+							    min-max-length tabindex="2"
+							    ng-change="check(userForm)"
+							    placeholer="PasswordHere"/>
+						<span ng-show="userForm.newPassword.$error.minLength" class="text-error">
+						minimum length is 8</span>
+						
+					</div>
+				</div>
+				<div class="control-group" ng-class="{error: helpers.isInvalid(userForm.confirmNewPassword)}">
+					<label class="control-label" for="confirm-field">Confirm Password :</label>
+					<div class="controls">
+						<input type="password" id="confirm-field" name="confirmNewPassword"
+						 ng-model="user.confirmNewPassword" 
+							   tabindex="3" 
+							   ng-change="check(userForm)"
+							    placeholer="PasswordHere" />
+						<span ng-show="userForm.confirmNewPassword.$error.equalFields" class="text-error">Must equal the password above</span>
+					</div>
+				</div>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" class="btn btn-primary" ng-submit="submitAccountCreation()" value="Submit" tabindex="3" />
+            </div>
+        </div>
+		<div class="clear-both"></div>
+    </div>
+</form>

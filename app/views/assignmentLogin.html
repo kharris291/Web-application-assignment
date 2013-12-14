@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="styles/loginAssignment.css">
+<form ng-controller = "login" class="form-signin form-horizontal" ng-submit="processLogin()" novalidate>
+	<div class="modal modal-inline" id="container">
+		<div class="modal-header">
+			<h3>Login</h3>
+		</div>
+		<div class="modal-body">
+
+			<div class="control-group">
+				<label for="username-field" class="control-label">Username :</label>
+				<div class="controls">
+					<input type="text" name="username" id="username-field" ng-model="credentials.username"
+						    autofocus="autofocus" required maxlength="50" tabindex="1" />
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label for="password-field" class="control-label">Login Password :</label>
+				<div class="controls">
+					<input type="password" name="password" id="password-field" ng-model="credentials.password"
+						   required maxlength="100" tabindex="2" />
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<a href="/Create" tabindex="5" class="btn">Create user</a>
+			<button type="submit" tabindex="4" ng-submit="processLogin()" class="btn btn-primary">Login</button>
+		</div>
+	</div>
+</form>

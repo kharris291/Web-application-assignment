@@ -1,0 +1,33 @@
+<div class="hero-unit" ng-controller="callsCtrl">
+  <div>
+	<form role="form" ng-submit="cal()">
+	    <div class="form-group">
+	    	<label>what</label>
+	    	<input type="text" ng-model="data.what" class="form-control" >
+	    	<label>where</label>
+	    	<input type="text" ng-model="data.where" class="form-control" >
+	    	<label>when</label>
+	    	<input type="date" ng-model="data.date" class="form-control" >
+	    	<label>notes</label>
+	    	<input type="text" ng-model="data.additional_notes" class="form-control" >
+	    </div>
+	      <button type="submit" ng-click="data" class="btn btn-default">Submit</button>
+	</form>
+  </div>
+  <div>
+  		<button ng-click="previous()" class="btn">Previous</button><button ng-click="next()" class="btn">Next</button>
+	  	<div ng-repeat="info in message">
+
+	  		<div>
+	  		{{info.date}}
+	  		<br/>
+			what : {{info.what}}<br/>
+			where : {{info.where}}<br/>
+			notes :{{info.additional_notes}}
+
+	  		 <i ng-click="edit(info, $index)" class="icon-edit"></i><i ng-click="delete(info, $index)" class="icon-trash"></i>
+	  		</div>
+	  	</div>
+
+  </div>
+</div>

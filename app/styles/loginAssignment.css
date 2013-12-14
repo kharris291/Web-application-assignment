@@ -1,0 +1,11 @@
+.modal{
+	margin-top: 150px;
+}
+
+.modal-header{
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	padding-bottom: 15px;
+	text-align: center;
+	border-bottom: 1px solid #ddd;
+}
