@@ -24,17 +24,18 @@ Assignment.App.controller('create', ["$scope","$http",'passwordValidity','User',
 
 		return result;
 	};
-
+	$scope.formSubmitted = false;
 	$scope.submitAccountCreation = function() {
 
 		var user = $scope.user;
 		var formIsValid = $scope.isValid();
 
 		if(formIsValid) {
-			User.create({'username':$scope.user.username,'password':$scope.user.password})
+			User.create($scope.user)
             	.then(function(data) {
           //              $scope.user.unshift(data);
           			console.log(data);
+          			$scope.formSubmitted = true;
         //                $scope.user = "";
                 }
             );

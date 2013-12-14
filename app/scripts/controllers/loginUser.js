@@ -7,6 +7,16 @@ Assignment.App.controller('login', ["$scope","$http","UserLogin", function($scop
         var user = $scope.user;
         UserLogin.index().then(function(data){
             console.log(data);
+            for( i in data){
+                //console.log(data[i].text.username);
+                //console.log(data[i].text.newPassword);
+                if(user.username===data[i].text.username){
+                    if(user.newPassword==data[i].text.newPassword){
+                        console.log("sup")
+                    }
+                }
+
+            }
         })
         
     }

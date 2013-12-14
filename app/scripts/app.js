@@ -10,6 +10,7 @@ Assignment.App = angular.module('assignment.app', [
   'ui.router',
   'createUser',
   'userLogin',
+  'calendarApp',
   'caTest'
 ])
 .config(function ($urlRouterProvider, $stateProvider, $locationProvider) {
