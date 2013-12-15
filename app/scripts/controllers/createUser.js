@@ -33,10 +33,8 @@ Assignment.App.controller('create', ["$scope","$http",'passwordValidity','User',
 		if(formIsValid) {
 			User.create($scope.user)
             	.then(function(data) {
-          //              $scope.user.unshift(data);
           			console.log(data);
           			$scope.formSubmitted = true;
-        //                $scope.user = "";
                 }
             );
 		}

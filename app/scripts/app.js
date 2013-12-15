@@ -11,29 +11,31 @@ Assignment.App = angular.module('assignment.app', [
   'createUser',
   'userLogin',
   'calendarApp',
+  'mainPage',
   'caTest'
 ])
 .config(function ($urlRouterProvider, $stateProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
 
+  $urlRouterProvider.otherwise("/assignmentLogin");
   $stateProvider
-    .state('home', {
-      url: "/",
-      templateUrl: 'views/main.html',
-      controller: 'MainCtrl as main'
-    }).state('calendar', {
-      url: "/calander",
-      templateUrl: 'views/calander.html'
-    }).state('assignmentLogin', {
+    .state('assignmentLogin', {
       url: "/assignmentLogin",
       templateUrl: 'views/assignmentLogin.html'
     })
-    .state('Create', {
-      url: "/Create",
-      templateUrl: 'views/Create.html'
+    .state('mainPage', {
+      url: "/mainPage",
+      templateUrl: 'views/mainPage.html'
+    })
+    .state('Fun', {
+      url: "/Fun",
+      templateUrl: 'views/Fun.html'
+    })
+    .state('Boring', {
+      url: "/Boring",
+      templateUrl: 'views/Boring.html'
     });
     
-  $urlRouterProvider.otherwise("/assignmentLogin");
 })
 .factory('passwordValidity', function(){
   var checkPasswords ={}

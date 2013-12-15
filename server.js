@@ -65,21 +65,9 @@ app.param('user', function(req, res, next, collectionName){
 });
 */
 app.get('/', routes.index);
-app.get('/calander', routes.index);
 app.get('/assignmentLogin', routes.index);
 app.get('/Create', routes.index);
-
-/*
-app.get('/calendar/:entries', entry.index);
-app.get('/calendar/:entries/:id', entry.show);
-app.post('/calendar/:entries', entry.create);
-app.put('/calendar/:entries/:id', entry.update);*/
-//app.del('/calenar/:entries/:id', entry.remove);
-
-//app.put('/assignmentLogin/:user/:id', Message.update);
-//app.del('/assignmentLogin/:user/:id', Message.remove);
-
-
+app.get('/mainPage', routes.index);
 
 app.get('/assignmentLogin/:user', messages.index);
 

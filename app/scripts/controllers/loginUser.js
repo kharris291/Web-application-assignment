@@ -1,18 +1,18 @@
 Assignment.App = angular.module('userLogin',[])
 
-Assignment.App.controller('login', ["$scope","$http","UserLogin", function($scope,$http,UserLogin) {
+Assignment.App.controller('login', ["$scope","$http","UserLogin","$location",
+ function($scope,$http,UserLogin,location) {
 	$scope.user = {username:'',password:''};
-    $scope
-    $scope.processLogin = function(){
+
+    $scope.processLogin = function(init){
         var user = $scope.user;
         UserLogin.index().then(function(data){
             console.log(data);
+            console.log(user);
             for( i in data){
-                //console.log(data[i].text.username);
-                //console.log(data[i].text.newPassword);
-                if(user.username===data[i].text.username){
-                    if(user.newPassword==data[i].text.newPassword){
-                        console.log("sup")
+                if(user.username==data[i].text.username){
+                    if(user.password==data[i].text.newPassword){
+                        location.path("mainPage");
                     }
                 }
 
@@ -22,7 +22,7 @@ Assignment.App.controller('login', ["$scope","$http","UserLogin", function($scop
     }
 }])
 .factory('UserLogin', ["$http", "$q", function($http, $q) {
-        var base = '/assignmentLogin/users';
+        var base = '/assignmentLogin/user';
 
         return {
             index: function() {

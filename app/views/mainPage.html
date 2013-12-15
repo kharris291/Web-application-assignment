@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="styles/mainPage.css">
+<div ng-controller="mainPageCtrl">
+	<nav class="navbar navbar-fixed-top navbar-inverse">
+		<div class="navbar-inner">
+			<a class="brand" href="/mainPage">PostIt</a>
+			<ul class="nav">
+				<li ng-repeat="pages in headings">
+					<a href="{{pages.href}}">{{pages.name}}</a>
+				</li>
+			</ul>
+	</nav>
+
+	
+
+</div>
