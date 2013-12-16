@@ -23,3 +23,28 @@ nav.navbar a.brand {
 nav .tab-listing-menu{
 	visibility: hidden;
 }
+
+
+.modal-body{
+	max-height: none;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+	color: #333;
+
+
+}
+
+/* used to set a height on the modal that is too long for the page*/
+
+.modal-inline {
+	left: auto;	
+	margin: 0 auto;
+	margin-top:50px;
+	position: relative;
+	top:auto;
+}
+
+form{
+	margin: 0px;
+}

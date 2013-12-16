@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="styles/mainPage.css">
-<div ng-controller="mainPageCtrl">
+<div>
 	<nav class="navbar navbar-fixed-top navbar-inverse">
 		<div class="navbar-inner">
 			<a class="brand" href="/mainPage">PostIt</a>
@@ -8,22 +8,13 @@
 					<a href="{{pages.href}}">{{pages.name}}</a>
 				</li>
 			</ul>
+		</div>
 	</nav>
 	FUN
-	<a class="btn" ng-click="addEntity()"><i class="icon-plus"></i>Add a post</a>
-
-	<form class="form form-horizontal" novalidate ng-submit="submitModifyShiftForm()" name="modifyForm">
-		<div modal="screenState.displayModifyShiftDialog" close="closeModifyEntityDialog(modifyForm, shift)" options="{backdropFade: true, dialogFade:true}">
-			<div class="modal-header">
-				<h3>Add</h3>
-			</div>
-			<div class="modal-body">
-				<div ng-include src="'/views/modify.html'"></div>
-			</div>
-			<div class="modal-footer">
-
-			</div>
-		</div>
-	</form>
+	<div>
+		<button class="btn btn-primary" data-toggle="modal" href="#addComment"><i class="icon-plus"></i> Add a post
+		</button>
+	</div>
+	<div class="modal hide fade" ng-include="'/views/addComment.html'" id="addComment"></div>
 </div>
 

@@ -46,6 +46,10 @@ app.param('assignmentLogin', function(req, res, next, collectionName){
   var db = require('mongoskin').db('localhost:27017/user', {safe:true});
   var collection = db.collection('user');
 
+
+  var db = require('mongoskin').db('localhost:27017/Fun', {safe:true});
+  var collection = db.collection('comment');
+
 /*mongoskin.db('localhost:27017/user',{safe: true}).collection('user').find().toArray(function (err, items) {
   console.dir(items);
 })
@@ -68,10 +72,14 @@ app.get('/', routes.index);
 app.get('/assignmentLogin', routes.index);
 app.get('/Create', routes.index);
 app.get('/mainPage', routes.index);
+app.get('/Fun', routes.index);
+
 
 app.get('/assignmentLogin/:user', messages.index);
 
 app.post('/Create/:user', messages.create);
+
+app.post('/Fun/:comment', messages.create);
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));

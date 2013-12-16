@@ -29,7 +29,8 @@ Assignment.App = angular.module('assignment.app', [
     })
     .state('Fun', {
       url: "/Fun",
-      templateUrl: 'views/Fun.html'
+      templateUrl: 'views/Fun.html',
+      controller:"mainPageCtrl"
     })
     .state('Boring', {
       url: "/Boring",

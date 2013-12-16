@@ -1,0 +1,38 @@
+<form class="form-horizontal">
+	
+	<div class="modal-header">
+		<h3>Add</h3>
+	</div>
+	<div class="modal-body">
+		<div>
+			Enter your name and comment below
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="username">
+				Username :
+			</label>
+			<div class="controls">
+				<input ng-model="comment.username" id="username"/>
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="comment">
+				Comment :
+			</label>
+			<div class="controls">
+				<textarea ng-model="comment.comment" id="comment"></textarea>
+				
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-primary" ng-click="addComment()" data-dismiss="modal">
+			Submit
+		</button>
+		<button class="btn" data-dismiss="modal">
+			Close Modal
+		</button>
+
+	</div>
+</form>
